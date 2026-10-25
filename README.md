@@ -37,14 +37,14 @@ A simple backend template to build your own **CRUD Todo List application locally
 
    ```json
    "scripts": {
-     "start": "node server.js"
+     "dev": "node --watch server.js"
    }
    ```
 
 5. Start the server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 The API will be available at `http://localhost:3000`.
