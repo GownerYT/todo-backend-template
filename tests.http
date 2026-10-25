@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:3000
+# After Basic add your password.
+# Generate your Base64 password by running: 
+#console.log(Buffer.from('admin:TU_CONTRASEÑA').toString('base64'));
+@auth = Basic 
+
+
+###
+GET {{baseUrl}}/
+
+###
+
+GET {{baseUrl}}/tasks
+Authorization: {{auth}}
+
+###
+
+GET {{baseUrl}}/tasks/1
+Authorization: {{auth}}
+
+###
+
+POST {{baseUrl}}/tasks
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+    "name": "Help Peter",
+    "completed": false
+}
+
+###
+
+PUT {{baseUrl}}/tasks/3
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+    "name": "Kill Peter",
+    "completed": false
+}
+
+###
+
+DELETE {{baseUrl}}/tasks/2
+Authorization: {{auth}}
